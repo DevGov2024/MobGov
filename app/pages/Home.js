@@ -58,14 +58,14 @@ const Home = ({ navigation }) => {
           source={{ uri: "https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/direitos_humanos/PARCERIAS/LOGOS_MANUAL/LOGOS_COLABORACOES_EMENDAS/LOGO%20PREFEITURA/LOGOTIPO_PREFEITURA_HORIZONTAL_FUNDO_CLARO.png" }}
           resizeMode="contain"
         />
-        <Text style={styles.navbarText}>Amigos MobilidadeSP</Text>
+        <Text style={styles.navbarText}>MobGov</Text>
       </View>
 
       {/* Welcome Section */}
       <View style={styles.welcomeSection}>
         <Text style={styles.title}>Bem-vindo ao time!</Text>
         <Text style={styles.description}>
-          Amigos MobilidadeSP é um aplicativo destinado a ajudar na acessibilidade urbana,
+           MobGov é um aplicativo destinado a ajudar na acessibilidade urbana,
           permitindo que os usuários marquem e compartilhem locais acessíveis e não acessíveis na cidade.
         </Text>
 
@@ -383,6 +383,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default Home;
 
