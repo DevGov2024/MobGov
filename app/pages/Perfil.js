@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, Alert } from 'react-native';
 import { Image } from 'expo-image';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-
-const Stack = createStackNavigator();
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -12,8 +8,8 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     if (username && password) {
-      // Navega para a página OtherPage
-      navigation.navigate('OtherPage', { username });
+      // Navega para a página UserProfile
+      navigation.navigate('UserProfile', { username });
     } else {
       Alert.alert('Login', 'Por favor, insira seu nome de usuário e senha.');
     }
@@ -21,7 +17,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Coruja-de-São-Paulo</Text>
+      <Text style={styles.text}>MobGov</Text>
       <Image
         style={styles.image}
         source={{ uri: "https://iconape.com/wp-content/files/fe/258081/svg/258081.svg" }}
@@ -50,26 +46,8 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-const OtherPage = ({ route }) => {
-  const { username } = route.params;
-
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Bem-vindo, {username}!</Text>
-      <Text style={styles.text}>Esta é uma página privada.</Text>
-    </View>
-  );
-};
-
-const Perfil = () => {
-  return (
-    <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="LoginScreen" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="OtherPage" component={OtherPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+const Perfil = ({ navigation }) => {
+  return <LoginScreen navigation={navigation} />;
 };
 
 const styles = StyleSheet.create({
@@ -105,6 +83,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Perfil;
+export default Perfil
 
 
