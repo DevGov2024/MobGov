@@ -28,7 +28,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "config": {
-        "googleMaps": {
+        "googleMaps": //"Chave pessoal do google cloud que possibilita a integração com o mapa"// {
          
         }
       }
